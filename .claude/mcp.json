@@ -2,7 +2,7 @@
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/user/ERASMUS"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
     },
     "fetch": {
       "command": "npx",

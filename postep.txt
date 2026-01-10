@@ -11,7 +11,7 @@ Started: 2026-01-10
 - SMART objectives: Specific, Measurable, Achievable, Relevant, Time-bound
 - Connect each section to LogFrame matrix for consistency
 - Reference partners' concrete programs: Google for Seniors (160), Za njihovu dobrobit (120)
-- Budget sums to exactly 60,000 EUR
+- Budget sums to exactly 60,000 EUR (all costs distributed within activities, no separate management line)
 - Use action verbs: Operationalize, Deploy, Bridge, Scale, Pilot, Validate
 ---
 
@@ -154,9 +154,23 @@ Started: 2026-01-10
 ## WNIOSEK COMPLETE
 
 All 22 sections written to 90-95% of character limits.
-Budget: 60,000 EUR (Management 12,000 + Activities 48,000)
+Budget: 60,000 EUR (distributed across 5 activities, management included within each)
 Priority: Inclusion and Diversity
 Partners: NEF (Poland) + CKM (Croatia)
 Duration: 17 months (September 2026 - January 2028)
+
+---
+
+## 2026-01-10 - Budget Correction
+- **Issue:** Management was listed as separate 12,000 EUR line item
+- **Correction:** Redistributed management costs within activities (KA210 lump sum structure)
+- **New allocation:**
+  - A1 Kick-off Meeting: 12,000 EUR (20%) - includes project setup and initial management
+  - A2 Training Course: 18,000 EUR (30%) - includes activity coordination and QA
+  - A3 Pilot Sessions: 15,000 EUR (25%) - includes dual-country coordination
+  - A4 AI Development: 9,000 EUR (15%) - includes technical coordination
+  - A5 Multiplier Events: 6,000 EUR (10%) - includes final reporting and closure
+- **Total: 60,000 EUR**
+- Updated: budzet_alokacja section and all B5 Field 5 budget justifications
 
 Next: Commit and push to repository.

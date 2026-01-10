@@ -1,0 +1,162 @@
+# ERASMUS Progress Log
+Project: DIGI-BRIDGE
+Started: 2026-01-10
+---
+
+## Codebase Patterns
+- Always fill 90-95% of character limits (3000 → 2700-2850 chars)
+- Use concrete target groups (names, not generic): NEF programs, CKM programs
+- Cite sources: Eurostat, OECD, WHO, national reports
+- Address all 4 horizontal aspects in B2.6: Inclusion, Environment, Digital, Participation
+- SMART objectives: Specific, Measurable, Achievable, Relevant, Time-bound
+- Connect each section to LogFrame matrix for consistency
+- Reference partners' concrete programs: Google for Seniors (160), Za njihovu dobrobit (120)
+- Budget sums to exactly 60,000 EUR
+- Use action verbs: Operationalize, Deploy, Bridge, Scale, Pilot, Validate
+---
+
+## Session Log
+
+## 2026-01-10 - Section B2.1 Objectives & Outcomes
+- Written: 3 SMART objectives with rationale, expected outcomes, and KPIs
+- Character count: ~2800/3000 (93%)
+- **Key decisions:**
+  - Structure: Each objective = Title + Description + Rationale + Outcome + KPIs
+  - Used concrete program names: Young AI Explorers, E-Senior, ACTIV8!, Za njihovu dobrobit, Google for Seniors
+  - Cited Eurostat 2024, WHO 2023 for data points
+  - Explicit priority alignment section at end
+- **Cross-references:**
+  - LogFrame objectives 1, 2, 3 → B2.1 directly
+  - B2.1 KPIs → B6.1 Measuring Achievement
+  - Target groups → B2.2
+---
+
+## 2026-01-10 - Section B2.2 Target Groups & Needs
+- Written: Primary (40 youth), Secondary (40 seniors), Indirect (80+)
+- Character count: ~2850/3000 (95%)
+- **Key decisions:**
+  - Split youth 20 PL + 20 HR with specific program names
+  - Split seniors 20 PL + 20 HR with database references
+  - Added own survey data (NEF N=45, CKM focus groups)
+  - Included indirect: multipliers, families, communities
+- **Cross-references:**
+  - B2.2 groups → B2.1 objectives alignment
+  - B2.2 needs → B2.4 how addressed
+  - B2.2 profiles → B5 activities participants
+---
+
+## 2026-01-10 - Section B2.3 Motivation & Funding
+- Written: Challenge, Innovation gap, Timing, Why Erasmus+
+- Character count: ~2820/3000 (94%)
+- **Key decisions:**
+  - Regional context: Silesian + Dubrovnik-Neretva specifics
+  - 3 innovations named: reverse mentoring, AI assistant, pair model
+  - 3 timing factors: AI breakthrough, post-COVID, policy alignment
+  - 4 reasons for Erasmus+: transnational, scale, youth mobility, no alternative
+- **Cross-references:**
+  - B2.3 challenge → B2.1 objectives rationale
+  - B2.3 innovation → B2.4 methodology
+  - B2.3 why E+ → B2.5 transnational benefits
+---
+
+## 2026-01-10 - Section B2.4 Addressing Needs & Goals
+- Written: 3 pillars methodology + organizational goals
+- Character count: ~2870/3000 (96%)
+- **Key decisions:**
+  - 3 pillars: Reverse mentoring, AI assistant, Pair model
+  - Each pillar connects to specific needs from B2.2
+  - Separate subsection for org goals (NEF + CKM)
+  - Referenced survey data and Activities from B5
+- **Cross-references:**
+  - B2.4 pillars → B5 activities implementation
+  - B2.4 org goals → B3 org descriptions
+  - B2.4 methodology → B6.2 sustainability
+---
+
+## 2026-01-10 - Section B2.5 Transnational Benefits
+- Written: Complementary expertise, synergy, knowledge transfer, EU scalability
+- Character count: ~2840/3000 (95%)
+- **Key decisions:**
+  - Detailed what each partner brings (NEF: AI, CKM: care)
+  - Bidirectional knowledge transfer
+  - Explained why national-only would fail
+  - EU identity building through youth contact
+---
+
+## 2026-01-10 - Section B2.6 Horizontal Aspects
+- Written: All 4 aspects with concrete measures
+- Character count: ~2880/3000 (96%)
+- **Key decisions:**
+  - Inclusion: voice-first AI, accessibility measures, diverse recruitment
+  - Environment: 40% green travel target, digital-first, sustainable events
+  - Digital: named specific tools (Miro, Slack, Moodle, Canva, Zoom)
+  - Participation: Youth Advisory Group, Senior Feedback Panel, multiplier events
+---
+
+## 2026-01-10 - Section B3.APP Applicant Organisation (NEF)
+- Written: 4 fields (Present, Activities, Field, Profiles)
+- Character count: ~3900/4000 (97%)
+- **Key decisions:**
+  - Emphasized E+ Youth Accreditation 2024-2028
+  - Named key staff: Robert, Anton, Ada
+  - Highlighted Google for Seniors (160) and Young AI Explorers
+---
+
+## 2026-01-10 - Section B3.P1 Partner 1 (CKM)
+- Written: 4 fields (Present, Activities, Field, Profiles)
+- Character count: ~3850/4000 (96%)
+- **Key decisions:**
+  - Emphasized Za njihovu dobrobit (1M EUR, 120 seniors)
+  - Named key staff: Marko, Marta
+  - Highlighted ESF experience and national recognition
+---
+
+## 2026-01-10 - Section B4.1-B4.4 Cooperation Arrangements
+- Written: Partnership formation, Management, Platforms, Tasks
+- Character count: ~2800-2850/3000 each (94-95%)
+- **Key decisions:**
+  - B4.1: Partnership formation story via OTLAS, complementary strengths detailed
+  - B4.2: Clear governance (Steering Committee, PM, Activity Coordinators), 5 risks with mitigation
+  - B4.3: All E+ platforms mapped to project phases, Youthpass for all youth
+  - B4.4: NEF 55% / CKM 45% split, specific deliverables per partner
+---
+
+## 2026-01-10 - Section B5 Activities (5 activities)
+- Written: All 5 activities with 5 fields each (Content, Target, Link, Results, Budget)
+- Character count: ~11,000-12,000/12,000 each (92-95%)
+- **Budget allocation:**
+  - A1 Kick-off Meeting Dubrovnik: 8,000 EUR (13%)
+  - A2 Training Course Zawiercie: 15,000 EUR (25%)
+  - A3 Pilot Sessions: 12,000 EUR (20%)
+  - A4 AI Development: 8,000 EUR (13%)
+  - A5 Multiplier Events: 5,000 EUR (8%)
+  - Management: 12,000 EUR (20%)
+  - TOTAL: 60,000 EUR
+---
+
+## 2026-01-10 - Section B6 Impact (3 sections)
+- Written: B6.1 Measuring Achievement, B6.2 Sustainability, B6.3 Dissemination
+- Character count: ~2800-2900/3000 each (93-97%)
+- **Key decisions:**
+  - B6.1: KPIs with data sources, timing, verification methods for all 3 objectives
+  - B6.2: Integration into E+ Accreditation, Google for Seniors, Za njihovu dobrobit
+  - B6.3: Website + social media + E+ platforms + media relations, reach targets
+---
+
+## 2026-01-10 - Section B7 Project Summary (PL + EN)
+- Written: 3 fields x 2 languages (Objectives, Implementation, Results)
+- Character count: ~450-480/500 per field (90-96%)
+- **Key decisions:**
+  - Both versions parallel structure for consistency
+  - Polish includes Cyfrowy Most, Cyfrowy Obywatel terminology
+---
+
+## WNIOSEK COMPLETE
+
+All 22 sections written to 90-95% of character limits.
+Budget: 60,000 EUR (Management 12,000 + Activities 48,000)
+Priority: Inclusion and Diversity
+Partners: NEF (Poland) + CKM (Croatia)
+Duration: 17 months (September 2026 - January 2028)
+
+Next: Commit and push to repository.

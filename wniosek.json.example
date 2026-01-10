@@ -1,0 +1,273 @@
+{
+  "projekt": {
+    "tytul": "Digital Literacy for Senior Citizens",
+    "tytul_en": "Digital Literacy for Senior Citizens",
+    "akronim": "DIGI-SENIOR",
+    "temat": "Digital Skills and Competences",
+    "priorytet_glowny": "Inclusion and Diversity",
+    "priorytety_dodatkowe": ["Digital Transformation"],
+    "czas_trwania_miesiace": 17,
+    "budzet": 60000,
+    "data_rozpoczecia": "2026-09-01",
+    "data_zakonczenia": "2028-01-31",
+    "sektor": "ADU"
+  },
+  "wnioskodawca": {
+    "nazwa": "Fundacja Cyfrowa Przyszlosc",
+    "akronim": "FCP",
+    "kraj": "Poland",
+    "miasto": "Krakow",
+    "ekspertyza": "Digital education for adults, 8 years experience",
+    "rola": "Project coordination, curriculum development",
+    "aktywa": "Digital training lab with 20 computers, 5 certified trainers"
+  },
+  "partner_1": {
+    "nazwa": "Digital Inclusion Association",
+    "kraj": "Germany",
+    "ekspertyza": "Senior education, accessibility",
+    "rola": "Methodology development, pilot testing",
+    "aktywa": "Network of 15 senior centers, VR equipment",
+    "newcomer": true
+  },
+  "strategia": {
+    "grupa_docelowa": "Seniors from Krakow Senior Center 'Zlota Jesien' (120 members, age 65+) and participants of FCP 'Digital ABC' program (80 adults annually)",
+    "liczba_uczestnikow": 60,
+    "problem_glowny": "42% of Polish seniors have never used internet (Eurostat 2024). Existing programs lack accessible methodology.",
+    "rozwiazanie": "Co-designed curriculum with large fonts, voice assistance, and peer-learning approach",
+    "innowacja": "APPROACH: Co-design with seniors / TECHNOLOGY: Voice-assisted tutorials / ACCESSIBILITY: Multi-sensory materials / MEASUREMENT: Digital competence pre/post assessment",
+    "wartosc_dodana_eu": "German expertise in VR-based learning + Polish experience in accessible design = scalable EU solution",
+    "synergia": "FCP's training infrastructure + DIA's senior network = reach 200+ seniors across 2 countries",
+    "przewaga_konkurencyjna": "Only partnership combining VR technology with accessibility-first design for 65+ demographic"
+  },
+  "logframe": [
+    {
+      "id": 1,
+      "cel": "Train 60 seniors in basic digital literacy within 18 months",
+      "aktywnosc": "Training Course (Activity 2)",
+      "output": "60 trained participants with certificates",
+      "rezultat": "75% increase in digital competence scores",
+      "kpi": "Pre/post test scores, min. 80% satisfaction"
+    },
+    {
+      "id": 2,
+      "cel": "Create accessible digital literacy toolkit by month 12",
+      "aktywnosc": "Toolkit Development (Activity 3)",
+      "output": "Toolkit in 3 languages, 60+ pages, voice-assisted",
+      "rezultat": "1000+ downloads, used by 50+ organizations",
+      "kpi": "Download counter, user feedback surveys"
+    },
+    {
+      "id": 3,
+      "cel": "Build sustainable network of senior digital ambassadors",
+      "aktywnosc": "Train-the-Trainer (Activity 4)",
+      "output": "20 trained peer educators",
+      "rezultat": "Peer educators continue training after project",
+      "kpi": "Number of trainings conducted post-project"
+    }
+  ],
+  "budzet_alokacja": {
+    "zarzadzanie": {"kwota": 12000, "procent": 20, "opis": "Coordination, communication, monitoring, reporting"},
+    "aktywnosc_1": {"nazwa": "Kick-off Meeting", "kwota": 8000, "procent": 13},
+    "aktywnosc_2": {"nazwa": "Training Course Poland", "kwota": 15000, "procent": 25},
+    "aktywnosc_3": {"nazwa": "Toolkit Development", "kwota": 12000, "procent": 20},
+    "aktywnosc_4": {"nazwa": "Multiplier Events", "kwota": 8000, "procent": 13},
+    "upowszechnianie": {"kwota": 5000, "procent": 9, "opis": "Publications, social media, conferences"}
+  },
+  "harmonogram": [
+    {"faza": "Preparation", "miesiace": "M1-M3", "aktywnosci": "Kick-off, needs assessment", "produkty": "Project website, assessment report"},
+    {"faza": "Development", "miesiace": "M4-M9", "aktywnosci": "Curriculum design, toolkit draft", "produkty": "Draft materials, prototypes"},
+    {"faza": "Implementation", "miesiace": "M10-M14", "aktywnosci": "Training, pilot testing", "produkty": "Certificates, feedback reports"},
+    {"faza": "Finalization", "miesiace": "M15-M17", "aktywnosci": "Multiplier events, evaluation", "produkty": "Final toolkit, evaluation report"}
+  ],
+  "sekcje": [
+    {
+      "id": "B2.1",
+      "tytul": "Objectives & Outcomes",
+      "limit": 3000,
+      "priorytet": 1,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B2.2",
+      "tytul": "Target Groups & Needs",
+      "limit": 3000,
+      "priorytet": 2,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B2.3",
+      "tytul": "Motivation & Funding",
+      "limit": 3000,
+      "priorytet": 3,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B2.4",
+      "tytul": "Addressing Needs & Goals",
+      "limit": 3000,
+      "priorytet": 4,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B2.5",
+      "tytul": "Transnational Benefits",
+      "limit": 3000,
+      "priorytet": 5,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B2.6",
+      "tytul": "Horizontal Aspects",
+      "limit": 3000,
+      "priorytet": 6,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B3.APP",
+      "tytul": "Applicant Organisation Description",
+      "limit": 4000,
+      "priorytet": 7,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "4 fields x 1000 chars each"
+    },
+    {
+      "id": "B3.P1",
+      "tytul": "Partner 1 Organisation Description",
+      "limit": 4000,
+      "priorytet": 8,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "4 fields x 1000 chars each"
+    },
+    {
+      "id": "B4.1",
+      "tytul": "Partnership Formation & Strengths",
+      "limit": 3000,
+      "priorytet": 9,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B4.2",
+      "tytul": "Project Management & Communication",
+      "limit": 3000,
+      "priorytet": 10,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B4.3",
+      "tytul": "Use of Erasmus+ Platforms",
+      "limit": 3000,
+      "priorytet": 11,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B4.4",
+      "tytul": "Tasks & Responsibilities",
+      "limit": 3000,
+      "priorytet": 12,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B5.A1",
+      "tytul": "Activity 1: Kick-off Meeting",
+      "limit": 12000,
+      "priorytet": 13,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "5 fields: Content 2000, Target 2000, Link 2000, Results 2000, Budget 4000"
+    },
+    {
+      "id": "B5.A2",
+      "tytul": "Activity 2: Training Course",
+      "limit": 12000,
+      "priorytet": 14,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "5 fields: Content 2000, Target 2000, Link 2000, Results 2000, Budget 4000"
+    },
+    {
+      "id": "B5.A3",
+      "tytul": "Activity 3: Toolkit Development",
+      "limit": 12000,
+      "priorytet": 15,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "5 fields: Content 2000, Target 2000, Link 2000, Results 2000, Budget 4000"
+    },
+    {
+      "id": "B5.A4",
+      "tytul": "Activity 4: Multiplier Events",
+      "limit": 12000,
+      "priorytet": 16,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "5 fields: Content 2000, Target 2000, Link 2000, Results 2000, Budget 4000"
+    },
+    {
+      "id": "B6.1",
+      "tytul": "Measuring Achievement",
+      "limit": 3000,
+      "priorytet": 17,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B6.2",
+      "tytul": "Long-term Development & Sustainability",
+      "limit": 3000,
+      "priorytet": 18,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B6.3",
+      "tytul": "Dissemination & Communication",
+      "limit": 3000,
+      "priorytet": 19,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": ""
+    },
+    {
+      "id": "B7.PL",
+      "tytul": "Project Summary (Polish)",
+      "limit": 1500,
+      "priorytet": 20,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "3 fields x 500 chars: Objectives, Implementation, Results"
+    },
+    {
+      "id": "B7.EN",
+      "tytul": "Project Summary (English)",
+      "limit": 1500,
+      "priorytet": 21,
+      "ukonczona": false,
+      "tresc": "",
+      "notatki": "3 fields x 500 chars: Objectives, Implementation, Results"
+    }
+  ]
+}

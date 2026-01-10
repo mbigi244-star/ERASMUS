@@ -1,196 +1,190 @@
-# Ralph
+# ERASMUS - Autonomiczny Agent do Pisania Wniosków KA210
 
-![Ralph](ralph.webp)
+![ERASMUS](ralph.webp)
 
-Ralph is an autonomous AI agent loop that runs [Amp](https://ampcode.com) repeatedly until all PRD items are complete. Each iteration is a fresh Amp instance with clean context. Memory persists via git history, `progress.txt`, and `prd.json`.
+ERASMUS to autonomiczna petla agenta AI, ktora pomaga pisac wnioski o dofinansowanie w programie Erasmus+ KA210 (Male Partnerstawa). Agent iteracyjnie pracuje nad kolejnymi sekcjami wniosku, zachowujac spojnosc i zgodnosc z wytycznymi programu.
 
-Based on [Geoffrey Huntley's Ralph pattern](https://ghuntley.com/ralph/).
+Bazuje na wzorcu [Ralph](https://ghuntley.com/ralph/) autorstwa Geoffrey'a Huntley'a.
 
-[Read my in-depth article on how I use Ralph](https://x.com/ryancarson/status/2008548371712135632)
+## Cel: 90-100 punktow (nie minimum 60!)
 
-## Prerequisites
+Minimalny prog 60 punktow to jedynie wymog wstepny. Finansowanie otrzymuja wnioski z wynikiem 85-100 punktow. Ten system pomoze Ci osiagnac maksymalny wynik.
 
-- [Amp CLI](https://ampcode.com) installed and authenticated
-- `jq` installed (`brew install jq` on macOS)
-- A git repository for your project
+## Kryteria oceny
 
-## Setup
+| Kryterium | Max punktow | Min punktow |
+|-----------|-------------|-------------|
+| RELEVANCE (Adekwatnosc) | 30 | 15 |
+| QUALITY (Jakosc projektu) | 30 | 15 |
+| PARTNERSHIP (Jakosc partnerstwa) | 20 | 10 |
+| IMPACT (Wplyw) | 20 | 10 |
+| **RAZEM** | **100** | **60** |
 
-### Option 1: Copy to your project
+## Wymagania
 
-Copy the ralph files into your project:
+- [Amp CLI](https://ampcode.com) zainstalowany i skonfigurowany
+- `jq` zainstalowany (`brew install jq` na macOS, `apt install jq` na Linux)
+- Repozytorium git dla projektu
+
+## Workflow - Krok po Kroku
+
+### KROK 0: Analiza organizacji i generowanie Project Bible
+
+```
+# 0.0 - Analiza stron organizacji (OBOWIAZKOWA)
+Zaladuj skill prd i przeanalizuj strony: [URL_WNIOSKODAWCY], [URL_PARTNERA]
+
+# 0.1 - Matchmaker i propozycje tematow
+Zaladuj skill prd i wygeneruj 3 propozycje tematow na podstawie PIF
+
+# 0.2 - Generowanie Project Bible
+Wybieram OPCJE [A/B/C] - wygeneruj pelny Project Bible
+```
+
+### KROK 1: Konwersja na format ERASMUS
+
+```
+Zaladuj skill erasmus i przekonwertuj Project Bible na wniosek.json
+```
+
+### KROK 2: Uruchom ERASMUS
 
 ```bash
-# From your project root
-mkdir -p scripts/ralph
-cp /path/to/ralph/ralph.sh scripts/ralph/
-cp /path/to/ralph/prompt.md scripts/ralph/
-chmod +x scripts/ralph/ralph.sh
+./erasmus.sh [max_iteracji]
 ```
 
-### Option 2: Install skills globally
+Domyslnie: 15 iteracji.
 
-Copy the skills to your Amp config for use across all projects:
+## Struktura wniosku KA210
+
+Agent pracuje nad nastepujacymi sekcjami:
+
+### B2. PROJECT DESCRIPTION (6 pol x 3000 znakow)
+
+| ID | Sekcja | Limit |
+|----|--------|-------|
+| 2.1 | Objectives & Outcomes | 3000 |
+| 2.2 | Target Groups & Needs | 3000 |
+| 2.3 | Motivation & Funding | 3000 |
+| 2.4 | Addressing Needs & Goals | 3000 |
+| 2.5 | Transnational Benefits | 3000 |
+| 2.6 | Horizontal Aspects (wszystkie 4!) | 3000 |
+
+### B3. PARTICIPATING ORGANISATIONS (4 pola x 1000 znakow)
+
+| Pole | Limit |
+|------|-------|
+| Present your organisation | 1000 |
+| Main activities | 1000 |
+| Activities in application field | 1000 |
+| Learner profiles & age groups | 1000 |
+
+### B4. COOPERATION ARRANGEMENTS (4 pola x 3000 znakow)
+
+| ID | Sekcja | Limit |
+|----|--------|-------|
+| 4.1 | Partnership Formation & Strengths | 3000 |
+| 4.2 | Project Management & Communication | 3000 |
+| 4.3 | Use of Erasmus+ Platforms | 3000 |
+| 4.4 | Tasks & Responsibilities | 3000 |
+
+### B5. ACTIVITIES (5 pol na aktywnosc)
+
+| Pole | Limit |
+|------|-------|
+| Content description | 2000 |
+| Target group | 2000 |
+| Link to objectives | 2000 |
+| Expected results | 2000 |
+| Budget justification | 4000 |
+
+### B6. IMPACT AND FOLLOW-UP (3 pola x 3000 znakow)
+
+| ID | Sekcja | Limit |
+|----|--------|-------|
+| 6.1 | Measuring Achievement | 3000 |
+| 6.2 | Long-term Development & Sustainability | 3000 |
+| 6.3 | Dissemination & Communication | 3000 |
+
+### B7. PROJECT SUMMARY (3 pola x 500 znakow x 2 jezyki)
+
+## Kluczowe pliki
+
+| Plik | Przeznaczenie |
+|------|---------------|
+| `erasmus.sh` | Glowny skrypt uruchamiajacy petle agenta |
+| `prompt.md` | Instrukcje dla kazdej iteracji agenta |
+| `wniosek.json` | Sekcje wniosku ze statusem ukonczenia |
+| `wniosek.json.example` | Przykladowy format wniosku |
+| `postep.txt` | Notatki i kontekst dla kolejnych iteracji |
+| `Matryca_KA210_EN.md` | Struktura referencyjna LogFrame |
+| `skills/prd/` | Skill do analizy i generowania Project Bible |
+| `skills/erasmus/` | Skill do konwersji na format JSON |
+
+## Krytyczne zasady
+
+### Limit znakow: 90-95%
+
+Kazde pole musi byc wypelnione w **90-95%** dostepnego limitu. Puste miejsce = utracone punkty!
+
+- Cel: 2700-2850 znakow dla pola 3000
+- Minimum: 2400 znakow (80%) - ponizej = strata punktow
+
+### Wszystkie 4 aspekty horyzontalne (OBOWIAZKOWE)
+
+1. **INCLUSION & DIVERSITY** - Wlaczenie i roznorodnosc
+2. **ENVIRONMENTAL SUSTAINABILITY** - Zrownowaozny rozwoj
+3. **DIGITAL DIMENSION** - Wymiar cyfrowy
+4. **PARTICIPATION & CIVIC ENGAGEMENT** - Uczestnictwo obywatelskie
+
+### Konkretne grupy docelowe
+
+NIE pisz: "mlodzi ludzie", "studenci"
+PISZ: "Mlodziez z Liceum nr 3 w Warszawie, klasy 2-3, 50 uczniow, program 'Kompetencje Cyfrowe'"
+
+### SMART Objectives
+
+Kazdy cel musi byc:
+- **S**pecific (Konkretny)
+- **M**easurable (Mierzalny)
+- **A**chievable (Osiagalny)
+- **R**elevant (Istotny)
+- **T**ime-bound (Okreslony w czasie)
+
+## Red Flags - Bledy odrzucajace wniosek
+
+### Bledy formalne (= automatyczne odrzucenie)
+- Zlozenie po terminie
+- Brak OID partnera
+- Mniej niz 2 organizacje z 2 roznych krajow
+- Aktywnosci poza krajami partnerskimi
+- Brak podpisu osoby upowaznionej
+
+### Bledy merytoryczne (= niski wynik)
+- Brak powiazania z priorytetami
+- Generyczne cele (bez liczb)
+- Brak danych o potrzebach
+- Niejasna metodologia
+- Brak aspektow horyzontalnych
+- Pasywni partnerzy
+- Brak wskaznikow (KPI)
+- Slabe upowszechnianie
+
+## Debugowanie
 
 ```bash
-cp -r skills/prd ~/.config/amp/skills/
-cp -r skills/ralph ~/.config/amp/skills/
-```
+# Zobacz status sekcji
+cat wniosek.json | jq '.sekcje[] | {id, tytul, ukonczona}'
 
-### Configure Amp auto-handoff (recommended)
+# Zobacz notatki z poprzednich iteracji
+cat postep.txt
 
-Add to `~/.config/amp/settings.json`:
-
-```json
-{
-  "amp.experimental.autoHandoff": { "context": 90 }
-}
-```
-
-This enables automatic handoff when context fills up, allowing Ralph to handle large stories that exceed a single context window.
-
-## Workflow
-
-### 1. Create a PRD
-
-Use the PRD skill to generate a detailed requirements document:
-
-```
-Load the prd skill and create a PRD for [your feature description]
-```
-
-Answer the clarifying questions. The skill saves output to `tasks/prd-[feature-name].md`.
-
-### 2. Convert PRD to Ralph format
-
-Use the Ralph skill to convert the markdown PRD to JSON:
-
-```
-Load the ralph skill and convert tasks/prd-[feature-name].md to prd.json
-```
-
-This creates `prd.json` with user stories structured for autonomous execution.
-
-### 3. Run Ralph
-
-```bash
-./scripts/ralph/ralph.sh [max_iterations]
-```
-
-Default is 10 iterations.
-
-Ralph will:
-1. Create a feature branch (from PRD `branchName`)
-2. Pick the highest priority story where `passes: false`
-3. Implement that single story
-4. Run quality checks (typecheck, tests)
-5. Commit if checks pass
-6. Update `prd.json` to mark story as `passes: true`
-7. Append learnings to `progress.txt`
-8. Repeat until all stories pass or max iterations reached
-
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `ralph.sh` | The bash loop that spawns fresh Amp instances |
-| `prompt.md` | Instructions given to each Amp instance |
-| `prd.json` | User stories with `passes` status (the task list) |
-| `prd.json.example` | Example PRD format for reference |
-| `progress.txt` | Append-only learnings for future iterations |
-| `skills/prd/` | Skill for generating PRDs |
-| `skills/ralph/` | Skill for converting PRDs to JSON |
-| `flowchart/` | Interactive visualization of how Ralph works |
-
-## Flowchart
-
-[![Ralph Flowchart](ralph-flowchart.png)](https://snarktank.github.io/ralph/)
-
-**[View Interactive Flowchart](https://snarktank.github.io/ralph/)** - Click through to see each step with animations.
-
-The `flowchart/` directory contains the source code. To run locally:
-
-```bash
-cd flowchart
-npm install
-npm run dev
-```
-
-## Critical Concepts
-
-### Each Iteration = Fresh Context
-
-Each iteration spawns a **new Amp instance** with clean context. The only memory between iterations is:
-- Git history (commits from previous iterations)
-- `progress.txt` (learnings and context)
-- `prd.json` (which stories are done)
-
-### Small Tasks
-
-Each PRD item should be small enough to complete in one context window. If a task is too big, the LLM runs out of context before finishing and produces poor code.
-
-Right-sized stories:
-- Add a database column and migration
-- Add a UI component to an existing page
-- Update a server action with new logic
-- Add a filter dropdown to a list
-
-Too big (split these):
-- "Build the entire dashboard"
-- "Add authentication"
-- "Refactor the API"
-
-### AGENTS.md Updates Are Critical
-
-After each iteration, Ralph updates the relevant `AGENTS.md` files with learnings. This is key because Amp automatically reads these files, so future iterations (and future human developers) benefit from discovered patterns, gotchas, and conventions.
-
-Examples of what to add to AGENTS.md:
-- Patterns discovered ("this codebase uses X for Y")
-- Gotchas ("do not forget to update Z when changing W")
-- Useful context ("the settings panel is in component X")
-
-### Feedback Loops
-
-Ralph only works if there are feedback loops:
-- Typecheck catches type errors
-- Tests verify behavior
-- CI must stay green (broken code compounds across iterations)
-
-### Browser Verification for UI Stories
-
-Frontend stories must include "Verify in browser using dev-browser skill" in acceptance criteria. Ralph will use the dev-browser skill to navigate to the page, interact with the UI, and confirm changes work.
-
-### Stop Condition
-
-When all stories have `passes: true`, Ralph outputs `<promise>COMPLETE</promise>` and the loop exits.
-
-## Debugging
-
-Check current state:
-
-```bash
-# See which stories are done
-cat prd.json | jq '.userStories[] | {id, title, passes}'
-
-# See learnings from previous iterations
-cat progress.txt
-
-# Check git history
+# Sprawdz historie git
 git log --oneline -10
 ```
 
-## Customizing prompt.md
+## Referencje
 
-Edit `prompt.md` to customize Ralph's behavior for your project:
-- Add project-specific quality check commands
-- Include codebase conventions
-- Add common gotchas for your stack
-
-## Archiving
-
-Ralph automatically archives previous runs when you start a new feature (different `branchName`). Archives are saved to `archive/YYYY-MM-DD-feature-name/`.
-
-## References
-
-- [Geoffrey Huntley's Ralph article](https://ghuntley.com/ralph/)
-- [Amp documentation](https://ampcode.com/manual)
+- [Przewodnik po programie Erasmus+](https://erasmus-plus.ec.europa.eu/programme-guide/erasmusplus-programme-guide)
+- [Formularz wniosku KA210](https://webgate.ec.europa.eu/app-forms/af-ui-opportunities/)
+- [Geoffrey Huntley's Ralph pattern](https://ghuntley.com/ralph/)

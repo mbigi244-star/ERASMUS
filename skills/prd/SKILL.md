@@ -1,133 +1,187 @@
 ---
 name: prd
-description: "Generate a Product Requirements Document (PRD) for a new feature. Use when planning a feature, starting a new project, or when asked to create a PRD. Triggers on: create a prd, write prd for, plan this feature, requirements for, spec out."
+description: "Analyze organizations and generate Project Bible for Erasmus+ KA210 applications. Use for organization website analysis, partner matching, and topic proposals. Triggers on: analyze organization, create project bible, generate ka210 proposal, erasmus+ planning."
 ---
 
-# PRD Generator
+# KA210 Project Bible Generator
 
-Create detailed Product Requirements Documents that are clear, actionable, and suitable for implementation.
+Create comprehensive Project Bibles for Erasmus+ KA210 Small-scale Partnership applications.
 
 ---
 
 ## The Job
 
-1. Receive a feature description from the user
-2. Ask 3-5 essential clarifying questions (with lettered options)
-3. Generate a structured PRD based on answers
-4. Save to `tasks/prd-[feature-name].md`
+1. Analyze organization websites (PROMPT 0.0)
+2. Generate partner match and 3 topic proposals (PROMPT 0.1)
+3. After user selects topic, generate full Project Bible (PROMPT 0.2)
+4. Save to `tasks/project-bible-[acronym].md`
 
-**Important:** Do NOT start implementing. Just create the PRD.
-
----
-
-## Step 1: Clarifying Questions
-
-Ask only critical questions where the initial prompt is ambiguous. Focus on:
-
-- **Problem/Goal:** What problem does this solve?
-- **Core Functionality:** What are the key actions?
-- **Scope/Boundaries:** What should it NOT do?
-- **Success Criteria:** How do we know it's done?
-
-### Format Questions Like This:
-
-```
-1. What is the primary goal of this feature?
-   A. Improve user onboarding experience
-   B. Increase user retention
-   C. Reduce support burden
-   D. Other: [please specify]
-
-2. Who is the target user?
-   A. New users only
-   B. Existing users only
-   C. All users
-   D. Admin users only
-
-3. What is the scope?
-   A. Minimal viable version
-   B. Full-featured implementation
-   C. Just the backend/API
-   D. Just the UI
-```
-
-This lets users respond with "1A, 2C, 3B" for quick iteration.
+**Reference:** Always use `Matryca_KA210_EN.md` as structure reference.
 
 ---
 
-## Step 2: PRD Structure
+## PROMPT 0.0: Organization Website Analysis (MANDATORY)
 
-Generate the PRD with these sections:
+Before writing any application content, analyze websites of all participating organizations.
 
-### 1. Introduction/Overview
-Brief description of the feature and the problem it solves.
+### Task
 
-### 2. Goals
-Specific, measurable objectives (bullet list).
+For each organization (applicant + partners), identify:
 
-### 3. User Stories
-Each story needs:
-- **Title:** Short descriptive name
-- **Description:** "As a [user], I want [feature] so that [benefit]"
-- **Acceptance Criteria:** Verifiable checklist of what "done" means
+1. **Concrete target groups** (NOT generic "young people"):
+   - Specific names of schools, programs, groups
+   - Numbers of participants
+   - Age ranges and profiles
+   - Identified needs from programs
 
-Each story should be small enough to implement in one focused session.
+2. **Operational capacity proofs**:
+   - Infrastructure (labs, equipment)
+   - Staff (trainers, experts, PhDs)
+   - Track record (past projects, trained participants)
 
-**Format:**
-```markdown
-### US-001: [Title]
-**Description:** As a [user], I want [feature] so that [benefit].
+### Output Format
 
-**Acceptance Criteria:**
-- [ ] Specific verifiable criterion
-- [ ] Another criterion
-- [ ] Typecheck/lint passes
-- [ ] **[UI stories only]** Verify in browser using dev-browser skill
 ```
+## ORGANIZATION ANALYSIS: [NAME]
+Website: [URL]
 
-**Important:** 
-- Acceptance criteria must be verifiable, not vague. "Works correctly" is bad. "Button shows confirmation dialog before deleting" is good.
-- **For any story with UI changes:** Always include "Verify in browser using dev-browser skill" as acceptance criteria. This ensures visual verification of frontend work.
+### Concrete Target Groups:
+1. [Specific group with name, numbers, age, program]
+2. [Another specific group]
 
-### 4. Functional Requirements
-Numbered list of specific functionalities:
-- "FR-1: The system must allow users to..."
-- "FR-2: When a user clicks X, the system must..."
+### Operational Capacity:
+- [Infrastructure/equipment]
+- [Staff expertise]
+- [Track record with numbers]
 
-Be explicit and unambiguous.
-
-### 5. Non-Goals (Out of Scope)
-What this feature will NOT include. Critical for managing scope.
-
-### 6. Design Considerations (Optional)
-- UI/UX requirements
-- Link to mockups if available
-- Relevant existing components to reuse
-
-### 7. Technical Considerations (Optional)
-- Known constraints or dependencies
-- Integration points with existing systems
-- Performance requirements
-
-### 8. Success Metrics
-How will success be measured?
-- "Reduce time to complete X by 50%"
-- "Increase conversion rate by 10%"
-
-### 9. Open Questions
-Remaining questions or areas needing clarification.
+### Data for Matrix:
+- Problems addressed: [list]
+- Potential objectives: [list]
+```
 
 ---
 
-## Writing for Junior Developers
+## PROMPT 0.1: Strategic Matchmaker and Topic Generator
 
-The PRD reader may be a junior developer or AI agent. Therefore:
+After website analysis, generate partner profile and 3 project topics.
 
-- Be explicit and unambiguous
-- Avoid jargon or explain it
-- Provide enough detail to understand purpose and core logic
-- Number requirements for easy reference
-- Use concrete examples where helpful
+### Focus: Digital and AI domains
+- Digital Transformation
+- Artificial Intelligence
+- Digital Skills
+- Digital Citizenship
+- Media Literacy
+
+### Task 1: Capabilities Audit
+
+For Polish organization:
+- **Superpowers**: Specific infrastructure, staff, local reach
+- **Strategic gap**: What's missing to achieve long-term goals
+- **Complementarity**: Profile of ideal partner
+
+### Task 2: Ideal Partner Profile
+
+- Preferred country (with justification)
+- Organization type (NGO, SME, University)
+- Required expertise ("hard skills")
+- Role in project
+
+### Task 3: Three Topic Proposals
+
+For each topic:
+- Title and main priority
+- Synergy logic (why this specific pair)
+- Hard output (tangible result)
+
+### Output Format
+
+```
+## 1. APPLICANT DIAGNOSIS
+Superpower: [description]
+Strategic gap: [description]
+
+## 2. IDEAL PARTNER PROFILE
+Best countries: [list with reasons]
+Organization type: [type]
+Required expertise: [list]
+Role: [description]
+
+## 3. PROJECT TOPIC PROPOSALS
+
+### OPTION A: [Title]
+Priority: [Inclusion & Diversity / Digital Transformation / etc.]
+Concept: [2-3 sentences]
+Role division:
+- Polish org does: [tasks]
+- Partner does: [tasks]
+Hard output: [tangible deliverable]
+
+### OPTION B: [Title]
+[same structure]
+
+### OPTION C: [Title]
+[same structure]
+```
+
+---
+
+## PROMPT 0.2: Full Project Bible Generator
+
+After user selects option (A/B/C), generate complete Project Bible.
+
+### Required Sections
+
+1. **PROJECT_DATA**: title, acronym, topic, priority, duration (17 months recommended), budget (60k), dates (start: September 2026)
+
+2. **APPLICANT_ORG**: name, country, expertise, role, unique assets
+
+3. **PARTNER_1**: name, country, expertise, role, unique assets, newcomer status
+
+4. **STRATEGY**:
+   - Target groups (CONCRETE from analysis!)
+   - Main problem
+   - Solution
+   - Innovation (4 dimensions: APPROACH/TECHNOLOGY/ACCESSIBILITY/MEASUREMENT)
+   - EU added value
+   - Synergy logic
+   - Competitive advantage (200-300 chars)
+   - Dissemination assets (concrete reach numbers)
+
+5. **LOGFRAME MATRIX**: Table with 3-5 objectives
+   | ID | Objective (SMART) | Activity | Output | Result | KPI |
+
+6. **BUDGET ALLOCATION**: Table summing to exactly 60,000 EUR
+   - Project Management: 17-25%
+   - Activities: remaining budget
+   - Must sum to 60,000 exactly!
+
+7. **TIMELINE**: Phases with months, activities, deliverables
+
+8. **KEY ACTIVITIES**: For each activity:
+   - Location (partner country only!)
+   - Duration (days)
+   - Participants (number and breakdown)
+   - Budget
+   - Objectives
+   - Leading organisation
+
+9. **OPERATIONAL CAPACITY PROOFS**: 3-5 hard statistics per organization
+
+---
+
+## Important Requirements
+
+1. **Use concrete target groups** from website analysis
+   - NOT: "students" or "youth"
+   - YES: "Youth from [School Name], grades [X-Y], [N] students"
+
+2. **Budget must sum to exactly 60,000 EUR**
+
+3. **Timeline must match duration** (17 months recommended)
+
+4. **Activities ONLY in partner countries** or EU institution HQs
+
+5. **LogFrame must show logical flow**: Problem → Objective → Activity → Output → Result
 
 ---
 
@@ -135,106 +189,17 @@ The PRD reader may be a junior developer or AI agent. Therefore:
 
 - **Format:** Markdown (`.md`)
 - **Location:** `tasks/`
-- **Filename:** `prd-[feature-name].md` (kebab-case)
+- **Filename:** `project-bible-[acronym].md`
 
 ---
 
-## Example PRD
+## Checklist Before Saving
 
-```markdown
-# PRD: Task Priority System
-
-## Introduction
-
-Add priority levels to tasks so users can focus on what matters most. Tasks can be marked as high, medium, or low priority, with visual indicators and filtering to help users manage their workload effectively.
-
-## Goals
-
-- Allow assigning priority (high/medium/low) to any task
-- Provide clear visual differentiation between priority levels
-- Enable filtering and sorting by priority
-- Default new tasks to medium priority
-
-## User Stories
-
-### US-001: Add priority field to database
-**Description:** As a developer, I need to store task priority so it persists across sessions.
-
-**Acceptance Criteria:**
-- [ ] Add priority column to tasks table: 'high' | 'medium' | 'low' (default 'medium')
-- [ ] Generate and run migration successfully
-- [ ] Typecheck passes
-
-### US-002: Display priority indicator on task cards
-**Description:** As a user, I want to see task priority at a glance so I know what needs attention first.
-
-**Acceptance Criteria:**
-- [ ] Each task card shows colored priority badge (red=high, yellow=medium, gray=low)
-- [ ] Priority visible without hovering or clicking
-- [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
-
-### US-003: Add priority selector to task edit
-**Description:** As a user, I want to change a task's priority when editing it.
-
-**Acceptance Criteria:**
-- [ ] Priority dropdown in task edit modal
-- [ ] Shows current priority as selected
-- [ ] Saves immediately on selection change
-- [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
-
-### US-004: Filter tasks by priority
-**Description:** As a user, I want to filter the task list to see only high-priority items when I'm focused.
-
-**Acceptance Criteria:**
-- [ ] Filter dropdown with options: All | High | Medium | Low
-- [ ] Filter persists in URL params
-- [ ] Empty state message when no tasks match filter
-- [ ] Typecheck passes
-- [ ] Verify in browser using dev-browser skill
-
-## Functional Requirements
-
-- FR-1: Add `priority` field to tasks table ('high' | 'medium' | 'low', default 'medium')
-- FR-2: Display colored priority badge on each task card
-- FR-3: Include priority selector in task edit modal
-- FR-4: Add priority filter dropdown to task list header
-- FR-5: Sort by priority within each status column (high to medium to low)
-
-## Non-Goals
-
-- No priority-based notifications or reminders
-- No automatic priority assignment based on due date
-- No priority inheritance for subtasks
-
-## Technical Considerations
-
-- Reuse existing badge component with color variants
-- Filter state managed via URL search params
-- Priority stored in database, not computed
-
-## Success Metrics
-
-- Users can change priority in under 2 clicks
-- High-priority tasks immediately visible at top of lists
-- No regression in task list performance
-
-## Open Questions
-
-- Should priority affect task ordering within a column?
-- Should we add keyboard shortcuts for priority changes?
-```
-
----
-
-## Checklist
-
-Before saving the PRD:
-
-- [ ] Asked clarifying questions with lettered options
-- [ ] Incorporated user's answers
-- [ ] User stories are small and specific
-- [ ] Functional requirements are numbered and unambiguous
-- [ ] Non-goals section defines clear boundaries
-- [ ] Saved to `tasks/prd-[feature-name].md`
+- [ ] Website analysis completed for all organizations
+- [ ] Target groups are CONCRETE (names, numbers)
+- [ ] Budget sums to exactly 60,000 EUR
+- [ ] Timeline matches duration
+- [ ] Activities only in partner countries
+- [ ] LogFrame shows clear logical progression
+- [ ] Operational capacity proofs included
+- [ ] Saved to `tasks/project-bible-[acronym].md`

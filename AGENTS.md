@@ -1,43 +1,96 @@
-# Ralph Agent Instructions
+# ERASMUS Agent Instructions
 
 ## Overview
 
-Ralph is an autonomous AI agent loop that runs Amp repeatedly until all PRD items are complete. Each iteration is a fresh Amp instance with clean context.
+ERASMUS is an autonomous AI agent loop that writes Erasmus+ KA210 Small-scale Partnership applications. Each iteration is a fresh agent instance with clean context. Memory persists via git history, `postep.txt`, and `wniosek.json`.
 
 ## Commands
 
 ```bash
-# Run the flowchart dev server
-cd flowchart && npm run dev
+# Run ERASMUS (from project root)
+./erasmus.sh [max_iterations]
 
-# Build the flowchart
-cd flowchart && npm run build
+# Check section status
+cat wniosek.json | jq '.sekcje[] | {id, tytul, ukonczona}'
 
-# Run Ralph (from your project that has prd.json)
-./ralph.sh [max_iterations]
+# View progress log
+cat postep.txt
 ```
 
 ## Key Files
 
-- `ralph.sh` - The bash loop that spawns fresh Amp instances
-- `prompt.md` - Instructions given to each Amp instance
-- `prd.json.example` - Example PRD format
-- `flowchart/` - Interactive React Flow diagram explaining how Ralph works
+- `erasmus.sh` - The bash loop that spawns fresh agent instances
+- `prompt.md` - Instructions given to each agent instance
+- `wniosek.json` - Application sections with completion status
+- `wniosek.json.example` - Example application format
+- `Matryca_KA210_EN.md` - LogFrame matrix reference structure
+- `postep.txt` - Progress log for context between iterations
+- `skills/prd/` - Skill for organization analysis and Project Bible
+- `skills/erasmus/` - Skill for converting Project Bible to JSON
 
-## Flowchart
+## Critical Patterns
 
-The `flowchart/` directory contains an interactive visualization built with React Flow. It's designed for presentations - click through to reveal each step with animations.
+### Character Limits (NON-NEGOTIABLE)
 
-To run locally:
-```bash
-cd flowchart
-npm install
-npm run dev
-```
+Every field MUST be filled to 90-95% of limit:
+- 3000 chars → write 2700-2850 chars
+- 2000 chars → write 1800-1900 chars
+- 1000 chars → write 900-950 chars
+- Below 80% = lost points!
 
-## Patterns
+### Concrete Target Groups (NON-NEGOTIABLE)
 
-- Each iteration spawns a fresh Amp instance with clean context
-- Memory persists via git history, `progress.txt`, and `prd.json`
-- Stories should be small enough to complete in one context window
-- Always update AGENTS.md with discovered patterns for future iterations
+WRONG: "young people", "students", "participants"
+RIGHT: "Youth from [School Name], grades [X-Y], [N] students"
+
+### All 4 Horizontal Aspects (Section B2.6)
+
+Must address ALL:
+1. Inclusion & Diversity
+2. Environmental Sustainability (33%+ green travel)
+3. Digital Dimension (name specific tools)
+4. Participation & Civic Engagement
+
+### SMART Objectives
+
+Every objective must be:
+- Specific (clear scope)
+- Measurable (numbers, KPIs)
+- Achievable (realistic)
+- Relevant (linked to priority)
+- Time-bound (deadline)
+
+### Budget Rules
+
+- Sum must equal exactly 60,000 EUR (or 30,000)
+- Activities ONLY in partner countries
+- Use calculation algorithm in prompt.md
+
+### Data Sources
+
+Always cite sources:
+- Eurostat for EU statistics
+- OECD for country comparisons
+- National reports for local data
+- Own micro-research (N≥10) if available
+
+## Evaluation Criteria
+
+| Criterion | Points | Key factors |
+|-----------|--------|-------------|
+| RELEVANCE | 30 | Priority link, inclusion, EU value |
+| QUALITY | 30 | SMART objectives, methodology, digital |
+| PARTNERSHIP | 20 | Active partners, newcomer bonus |
+| IMPACT | 20 | KPIs, sustainability, dissemination |
+
+## Iteration Flow
+
+1. Read `wniosek.json` for current state
+2. Read `postep.txt` for context
+3. Pick highest priority section with `ukonczona: false`
+4. Write section following `prompt.md` guidelines
+5. Verify character count (90-95%)
+6. Update `wniosek.json` to mark complete
+7. Append progress to `postep.txt`
+8. Commit changes
+9. Repeat until all sections complete
